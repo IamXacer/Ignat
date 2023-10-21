@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import {ChangeEvent, useState} from 'react';
 import React from "react";
+import styles from './hw3.module.css'
 
 export const HW3 = () => {
   // 1️⃣ Раскомментируйте JSX(HW3.tsx) и вы увидите,
@@ -16,11 +17,10 @@ export const HW3 = () => {
     'То, что вы делаете по ночам, то и делает вас богатым. (Аль Капоне)',
   ]);
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // setCurrentText(ЧЕГО-ТО НЕ ХВАТАЕТ);
-    const inputValue = event.currentTarget.value
-    setCurrentText(inputValue)
-  };
+ const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
+   let curenEvent = e.currentTarget.value
+     setCurrentText(curenEvent)
+ }
 
     const handleSave = () => {
         if (currentText.trim() !== '') {
@@ -34,12 +34,13 @@ export const HW3 = () => {
       {currentText ? (
         <h1 id={'hw03-text'}>{currentText}</h1>
       ) : (
-        <h1 id={'hw03-default-text'}>Здесь появится новое дело</h1> // ничего не меняем, здесь все норм
+        <h1 className={styles.hw03DefaultText} id={'hw03-default-text'}>Здесь появится новое дело</h1> // ничего не меняем, здесь все норм
       )}
 
-      <input id={'hw03-input'} type="text" value={currentText} onChange={handleChange} />
+      <input value={currentText} onChange={handleChange}/>
 
-      <button id={'hw03-button'} onClick={handleSave}> // НЕ ХВАТАТЕТ ФУНКЦИИ
+      <button className={styles.hw03Button}
+          id={'hw03-button'} onClick={handleSave}> // НЕ ХВАТАТЕТ ФУНКЦИИ
         Сохранить
       </button>
 

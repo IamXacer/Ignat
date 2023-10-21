@@ -1,0 +1,19 @@
+.hw03DefaultText {
+ background-color: #61dafb;
+ max-width: 400px;
+ margin-left: auto; /* Центрирование по левому краю */
+ margin-right: auto; /* Центрирование по правому краю */
+}
+.hw03Button {
+ background-color: #007bff; /* Начальный цвет фона */
+ color: #fff; /* Цвет текста */
+ padding: 7px 20px; /* Размеры кнопки */
+ border: none; /* Убрать границу */
+ cursor: pointer; /* Изменить курсор при наведении */
+ transition: background-color 0.3s; /* Анимация изменения цвета фона */
+
+}
+
+.hw03Button:hover {
+ background-color: #0056b3; /* Цвет фона при наведении курсора */
+}
