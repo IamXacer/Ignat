@@ -1,8 +1,22 @@
-.burgerMenuIcon {
-}
+/* Header.module.css */
 
 .header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    padding-top: 20px; /* Добавление верхнего отступа */
 }
 
-.header h1 {
+.burgerMenuIcon {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
 }

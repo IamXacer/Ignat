@@ -9,9 +9,15 @@ const Stand = () => {
     const [error, setError] = useState<string>('')
 
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
-
+const showAlert = () => {
+    if(error) {
+        alert('введите текст...')
+    }else {
+        alert(stateForAllInputs)
+    }
+}
     return (
-        <div id={'hw4-stand'} className={s.stand}>
+        <div id={'hw4-stand'} className={s.column}>
             <div className={s.inputs}>
                 {/*совместим со старым кодом:*/}
                 <div>
@@ -43,14 +49,21 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}>
+                    <SuperButton id={'hw4-super-button-default'}
+className={s.buttonsRed}
+                                 onClick={showAlert}
+                    >
+                        red
                         default
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-red'} xType={'red'}>
-                        red
+                    <SuperButton id={'hw4-super-button-red'} xType={'red'}
+
+                    >
+
+
                     </SuperButton>
                 </div>
                 {/*задизэйбленная кнопка:*/}

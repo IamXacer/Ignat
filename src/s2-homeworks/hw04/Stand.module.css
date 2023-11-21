@@ -21,3 +21,12 @@
     flex-direction: column;
     gap: 36px;
 }
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.buttonsRed {
+    background-color: red;
+}
