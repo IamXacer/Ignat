@@ -16,6 +16,9 @@ const showAlert = () => {
         alert(stateForAllInputs)
     }
 }
+const handleBlur = () =>{
+        setError(stateForAllInputs.trim() ? '' : 'Error')
+}
     return (
         <div id={'hw4-stand'} className={s.column}>
             <div className={s.inputs}>
@@ -25,6 +28,7 @@ const showAlert = () => {
                         id={'hw4-super-input-like-old'}
                         value={stateForAllInputs}
                         onChange={(e) => setValue(e.currentTarget.value)}
+                        onBlur={handleBlur}
                     />
                 </div>
                 {/*инпут с ошибкой:*/}
@@ -34,6 +38,8 @@ const showAlert = () => {
                         value={stateForAllInputs}
                         onChangeText={setValue}
                         error={error}
+                        onBlur={handleBlur}
+                     /*   onEnter={showAlert}*/
                         onEnter={() => {
                             setError(
                                 stateForAllInputs.trim()
@@ -50,7 +56,7 @@ const showAlert = () => {
                 {/*обычная кнопка:*/}
                 <div>
                     <SuperButton id={'hw4-super-button-default'}
-className={s.buttonsRed}
+                     className={s.buttonsRed}
                                  onClick={showAlert}
                     >
                         red
@@ -60,9 +66,7 @@ className={s.buttonsRed}
                 {/*красная кнопка:*/}
                 <div>
                     <SuperButton id={'hw4-super-button-red'} xType={'red'}
-
                     >
-
 
                     </SuperButton>
                 </div>

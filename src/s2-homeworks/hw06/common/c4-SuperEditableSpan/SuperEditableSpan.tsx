@@ -42,19 +42,19 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
 
     const onEnterCallback = () => {
         // выключить editMode при нажатии Enter // делают студенты
-
+        setEditMode(false)
         onEnter?.()
     }
     const onBlurCallback = (e: React.FocusEvent<HTMLInputElement>) => {
         // выключить editMode при нажатии за пределами инпута // делают студенты
-
+        setEditMode(false)
         onBlur?.(e)
     }
     const onDoubleClickCallBack = (
         e: React.MouseEvent<HTMLSpanElement, MouseEvent>
     ) => {
         // включить editMode при двойном клике // делают студенты
-
+        setEditMode(true)
         onDoubleClick?.(e)
     }
 
@@ -62,17 +62,21 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
         + (className ? ' ' + className : '')
 
     return (
-        <>
+        < div className={s.spanBlock}>
             {editMode ? (
-                <SuperInputText
-                    autoFocus={autoFocus || true}
-                    onBlur={onBlurCallback}
-                    onEnter={onEnterCallback}
-                    className={s.input}
-                    {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
-                />
+                <div className={s.inputContainer}>
+                    <div className={s.input}>
+                        <SuperInputText
+                            autoFocus={autoFocus || true}
+                            onBlur={onBlurCallback}
+                            onEnter={onEnterCallback}
+                            className={s.input}
+                            {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+                        />
+                    </div>
+                </div>
             ) : (
-                <div className={s.spanBlock}>
+                <div >
                     <img
                         src={editIcon}
                         className={s.pen}
@@ -89,7 +93,7 @@ const SuperEditableSpan: React.FC<SuperEditableSpanType> = (
                     </span>
                 </div>
             )}
-        </>
+        </div>
     )
 }
 

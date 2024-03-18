@@ -1,10 +1,26 @@
 .spanBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    margin-bottom: 100px;
 }
 
 .span {
+    margin-bottom: 110px;
 }
 
 .input {
+    max-width: 200px;
+
+}
+.inputContainer{
+    min-height: 32px;
+}
+.input:focus {
+    max-width: 200px;
+    background: #0f8d3a;
+    outline: none;
 }
 
 .pen {

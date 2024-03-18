@@ -1,4 +1,9 @@
 .button {
+    background-color: #7e8bbd;
+    color: #61dafb;
+}
+.button:hover{
+    background-color: #6ab476;
 }
 
 .disabled {
@@ -20,6 +25,7 @@
 }
 
 .secondary:hover {
+
 }
 
 
