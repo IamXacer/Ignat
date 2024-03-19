@@ -9,18 +9,9 @@ const Stand = () => {
     const [error, setError] = useState<string>('')
 
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
-const showAlert = () => {
-    if(error) {
-        alert('введите текст...')
-    }else {
-        alert(stateForAllInputs)
-    }
-}
-const handleBlur = () =>{
-        setError(stateForAllInputs.trim() ? '' : 'Error')
-}
+
     return (
-        <div id={'hw4-stand'} className={s.column}>
+        <div id={'hw4-stand'} className={s.stand}>
             <div className={s.inputs}>
                 {/*совместим со старым кодом:*/}
                 <div>
@@ -28,7 +19,6 @@ const handleBlur = () =>{
                         id={'hw4-super-input-like-old'}
                         value={stateForAllInputs}
                         onChange={(e) => setValue(e.currentTarget.value)}
-                        onBlur={handleBlur}
                     />
                 </div>
                 {/*инпут с ошибкой:*/}
@@ -38,8 +28,6 @@ const handleBlur = () =>{
                         value={stateForAllInputs}
                         onChangeText={setValue}
                         error={error}
-                        onBlur={handleBlur}
-                     /*   onEnter={showAlert}*/
                         onEnter={() => {
                             setError(
                                 stateForAllInputs.trim()
@@ -55,19 +43,14 @@ const handleBlur = () =>{
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}
-                     className={s.buttonsRed}
-                                 onClick={showAlert}
-                    >
-                        red
+                    <SuperButton id={'hw4-super-button-default'}>
                         default
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-red'} xType={'red'}
-                    >
-
+                    <SuperButton id={'hw4-super-button-red'} xType={'red'}>
+                        red
                     </SuperButton>
                 </div>
                 {/*задизэйбленная кнопка:*/}

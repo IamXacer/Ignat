@@ -1,10 +1,11 @@
-.input {
-    border: 1px solid #ccc;
-    padding: 8px;
-    font-size: 16px;
-    width: 100%;
-}
+.superInput {
 
+}
+.stand {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в столбик */
+    align-items: center; /* Центрируем элементы по горизонтали */
+}
 .input:focus {
     outline: none;
     border: #ffdd00;
@@ -12,12 +13,9 @@
     color: #ffdd00;
 }
 
-.inputWrapper {
-    margin: 10px 0;
-}
-
 .superInput {
     margin: 10px;
+
     background: #536544;
     color: aqua;
 }
@@ -26,10 +24,6 @@
     margin: 10px;
     background: red;
     border: 2px solid aqua;
-}
-
-.errorInput:focus {
-    border-color: #ff0000;
 }
 
 .error {

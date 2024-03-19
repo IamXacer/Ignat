@@ -36,21 +36,22 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
     }
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        onChange?.(e) // если есть пропс onChange, то передать ему е (поскольку onChange не обязателен)
+        onChange?.(e);
+        // если есть пропс onChange, то передать ему е (поскольку onChange не обязателен)
 
         onChangeText?.(e.currentTarget.value)
     }
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => {
-        onKeyPress?.(e)
+        onKeyPress  && onKeyPress?.(e)
 
-        onEnter && // если есть пропс onEnter
-        e.key === 'Enter' && // и если нажата кнопка Enter
-        onEnter() // то вызвать его
+        onEnter // если есть пропс onEnter
+        && e.key === 'Enter'// и если нажата кнопка Enter
+        &&  onEnter() // то вызвать его
     }
 
-    const finalSpanClassName = `${s.error} ${spanClassName ? spanClassName : ''}`
-    const finalInputClassName = `${s.input} ${s.error ? s.errorInput :s.errorInput} 
-    ${className}` // need to fix with (?:) and s.superInput
+    const finalSpanClassName = `${s.error}  ${spanClassName ? spanClassName : ''}`
+    const finalInputClassName =  `${s.input} ${error ? s.errorInput :s.errorInput} ${className}` // задача на смешивание классов
+   /* const finalInputClassName = `${s.input} ${error ? s.errorInput : ''} ${className}`;*/ // задача на смешивание классов
 
     return (
         <div className={s.inputWrapper}>
@@ -60,8 +61,7 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
                 onChange={onChangeCallback}
                 onKeyPress={onKeyPressCallback}
                 className={finalInputClassName}
-                {...restProps} // отдаём инпуту остальные
-                // пропсы если они есть (value например там внутри)
+                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
             />
             <span
                 id={id ? id + '-span' : undefined}

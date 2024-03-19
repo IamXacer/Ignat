@@ -12,7 +12,7 @@ export const pureAddUser = (name: string,
                             setName: React.Dispatch<React.SetStateAction<string>>,
                             addUserCallback: (name: string) => void) => {
     // если имя пустое - показать ошибку, иначе - добавить юзера и очистить инпут
-    if (name === '') {
+    if (name.trim() === '') {
         setError('Title is required')
 
     } else {
@@ -22,7 +22,7 @@ export const pureAddUser = (name: string,
 }
 
 export const pureOnBlur = (name: string, setError: React.Dispatch<React.SetStateAction<string>>) => { // если имя пустое - показать ошибку
-    if (name === '') {
+    if (name.trim() === '') {
         setError('name is require!')
     }
 }
@@ -44,21 +44,21 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     // деструктуризация пропсов
     const [name, setName] = useState<string>('') // need to fix any
     const [error, setError] = useState<string>('') // need to fix any
-    const [lastEnteredName, setLastEnteredName] = useState<string>('');
+   /* const [lastEnteredName, setLastEnteredName] = useState<string>('');*/
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => { // need to fix any
-        const trimedName = e.currentTarget.value.trim()
-        if (trimedName) {
-            setName(trimedName) // need to fix
+      /*  const trimedName = e.currentTarget.value.trim()
+        if (trimedName) {*/
+            setName(e.currentTarget.value) // need to fix
             error && setError('')
-        } else {
+      /*  } else {
             setName('')
             setError('name is required!!!!')
-        }
+        }*/
     }
 
     const addUser = () => {
         pureAddUser(name, setError, setName, addUserCallback)
-        setLastEnteredName(name)
+       // setLastEnteredName(name)
         //alert(name)
     }
 
@@ -71,7 +71,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     }
 
     const totalUsers = users.length // need to fix
-    const lastUserName = lastEnteredName || ''
+    const lastUserName = totalUsers? users[totalUsers -1].name : ''
     // need to fix
 
     return (

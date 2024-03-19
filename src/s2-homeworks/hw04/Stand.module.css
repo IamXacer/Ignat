@@ -1,32 +1,25 @@
 .stand {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: center; /* Центрируем элементы по вертикали */
 }
 
 .inputs {
     display: flex;
-    flex-direction: column;
-    gap: 48px;
+    flex-direction: column; /* Отображаем элементы в столбик */
+    align-items: center; /* Центрируем элементы по горизонтали */
+
 }
 
 .buttons {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+
+    margin-top: 4px;
 }
 
 .checkboxes {
     display: flex;
     flex-direction: column;
-    gap: 36px;
-}
-.column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
-}
-.buttonsRed {
-    background-color: red;
 }
