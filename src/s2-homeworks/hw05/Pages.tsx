@@ -16,6 +16,7 @@ function Pages() {
         <div>
             {/* Define your routes within a Routes component */}
             <Routes>
+
                 {/* Route for the home page, which redirects to /pre-junior */}
                 <Route path="/" element={<Navigate to={PATH.PRE_JUNIOR} />} />
 
@@ -32,6 +33,7 @@ function Pages() {
                 <Route path="*" element={<Error404 />} />
             </Routes>
         </div>
+
     )
 }
 

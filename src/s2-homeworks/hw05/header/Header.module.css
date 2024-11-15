@@ -1,22 +1,41 @@
-/* Header.module.css */
-
 .header {
     display: flex;
     align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    padding-top: 20px; /* Добавление верхнего отступа */
+    background-color: #c59999;
+    color: white;
+    padding: 10px;
 }
 
 .burgerMenuIcon {
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
     margin-right: 10px;
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+    margin-right: auto;
+    gap: 15px;
+    opacity: 0; /* Начальная непрозрачность */
+    transition: opacity 0.3s ease; /* Плавный переход */
+    pointer-events: none; /* Отключение взаимодействия, когда ссылки невидимы */
+}
+
+.links.visible {
+    opacity: 1; /* Полная непрозрачность, когда ссылки видны */
+    pointer-events: auto; /* Включение взаимодействия, когда ссылки видны */
+}
+
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 h1 {
-    font-size: 24px;
     margin: 0;
+    font-size: 1.5em;
+    color: white;
 }

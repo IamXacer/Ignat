@@ -1,5 +1,8 @@
 .superInput {
+    margin: 10px;
 
+    background: #536544;
+    color: #0de354;
 }
 .stand {
     display: flex;
@@ -8,17 +11,11 @@
 }
 .input:focus {
     outline: none;
-    border: #ffdd00;
     border-radius: 190px;
     color: #ffdd00;
+    border: 2px solid aqua;
 }
 
-.superInput {
-    margin: 10px;
-
-    background: #536544;
-    color: aqua;
-}
 
 .errorInput {
     margin: 10px;

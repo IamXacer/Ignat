@@ -7,6 +7,7 @@ import React, {
 } from 'react'
 import s from './SuperInputText.module.css'
 
+
 // тип пропсов обычного инпута
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement>
@@ -49,9 +50,15 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = (
         &&  onEnter() // то вызвать его
     }
 
-    const finalSpanClassName = `${s.error}  ${spanClassName ? spanClassName : ''}`
-    const finalInputClassName =  `${s.input} ${error ? s.errorInput :s.errorInput} ${className}` // задача на смешивание классов
-   /* const finalInputClassName = `${s.input} ${error ? s.errorInput : ''} ${className}`;*/ // задача на смешивание классов
+    const getClassName = (...classNames: (string | undefined)[]) => classNames.filter(Boolean).join(' ');
+
+    const finalSpanClassName = getClassName(s.error, spanClassName);
+  /*  const finalInputClassName = getClassName(
+        s.input,
+        error ? s.errorInput : s.superInput,
+        className
+    ); */// задача на смешивание классов
+    const finalInputClassName = `${s.input} ${error ? s.errorInput : s.superInput} ${className}`; // задача на смешивание классов
 
     return (
         <div className={s.inputWrapper}>

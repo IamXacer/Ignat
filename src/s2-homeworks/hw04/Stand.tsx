@@ -30,10 +30,7 @@ const Stand = () => {
                         error={error}
                         onEnter={() => {
                             setError(
-                                stateForAllInputs.trim()
-                                    ? ''
-                                    : 'Error'
-                            )
+                                stateForAllInputs.trim() ? '' : 'Error')
                             setValue('')
                         }}
                     />
@@ -58,10 +55,7 @@ const Stand = () => {
                     <SuperButton
                         id={'hw4-super-button-disabled'}
                         xType={'red'}
-                        disabled
-                    >
-                        disabled
-                    </SuperButton>
+                        disabled>disabled</SuperButton>
                 </div>
                 {/*задизэйбленная кнопка:*/}
                 <div>

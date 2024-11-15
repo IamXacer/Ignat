@@ -6,13 +6,16 @@
         left:130%
     }
 }
-
+.disabled {
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 77, 153, 0.5);
+    opacity: 50%;
+}
 .default {
     background: #576151;
     color: aqua;
     outline: none;
 }
-
 
 .default:disabled {
     color: chartreuse;
@@ -20,6 +23,11 @@
 
 .red {
     background: #932525;
+}
+.secondary {
+    border: 1px solid #0066CC;
+    color: #0066CC;
+    background-color: transparent;
 }
 .button {
     position:relative;
