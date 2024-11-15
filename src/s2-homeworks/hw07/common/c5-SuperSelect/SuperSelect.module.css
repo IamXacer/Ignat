@@ -1,9 +1,12 @@
 .select {
+    color: #0de354;
 }
 
 .select:focus {
+    color: #0de354;
 }
 
 
 .option:hover {
+    color: #0de354;
 }
