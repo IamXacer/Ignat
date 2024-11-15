@@ -31,3 +31,7 @@
     border-radius: 50%;
     transform: translate(-50%, -50%); /* Центрирование внутреннего круга */
 }
+/*
+const onChangeOption = (newValue:number) => {
+                                          setValue(Number(newValue)); // Убедитесь, что значение преобразовано в число
+                                          };*/

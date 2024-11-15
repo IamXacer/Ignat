@@ -46,29 +46,19 @@
 
         const mappedOptions: any[] = options
             ? options.map((o) => (
-                      <label key={name + '-' + o.id} className={s.label}>
-                          <input
-                              id={id + '-input-' + o.id}
-                              className={finalRadioClassName}
-                              type={'radio'}
-                              key={o.id}
-                              value={o.id}
-                              name={name}
-                              checked={o.id === value}
-                              // name, checked, value делают студенты
+                <label key={name + '-' + o.id} className={s.label}>
+                    <input
+                        id={id + '-input-' + o.id} // Проверьте правильность генерации id
+                        type={'radio'}
+                        name={name}
+                        value={o.id}
+                        checked={o.id === value}
+                        onChange={onChangeCallback}
+                    />
+                    <span id={id + '-span-' + o.id}>{o.value}</span>
+                </label>
 
-                              onChange={onChangeCallback}
-                              {...restProps}
-                          />
-                      <span
-                          id={id + '-span-' + o.id}
-                          {...spanProps}
-                          className={spanClassName}
-                      >
-                          {o.value}
-                      </span>
-                  </label>
-              ))
+            ))
             : []
 
         return <div className={s.options}>{mappedOptions}</div>

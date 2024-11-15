@@ -18,16 +18,13 @@ const arr = [
 ] // value может быть изменено
 
 const HW7 = () => {
-    const [value, setValue] = useState(1); // Начальное значение синхронизировано
-
-    const onChangeOption = (newValue:number) => {
-        setValue(Number(newValue)); // Убедитесь, что значение преобразовано в число
-    };
+    const [value, onChangeOption] = useState(1) // селект и радио должны работать синхронно
 
     return (
         <div id={'hw7'}>
             <div className={s2.hwTitle}>Homework #7</div>
 
+            {/*демонстрация возможностей компонент:*/}
             <div className={s2.hw}>
                 <div className={s.container}>
                     <div>
@@ -35,7 +32,7 @@ const HW7 = () => {
                             id={'hw7-super-select'}
                             options={arr}
                             value={value}
-                            onChangeOption={onChangeOption} // Используем onChangeOption
+                            onChangeOption={onChangeOption}
                         />
                     </div>
                     <div>
@@ -43,15 +40,14 @@ const HW7 = () => {
                             id={'hw7-super-radio'}
                             name={'hw7-radio'}
                             options={arr}
-                            value={value} // Передаем value
-                            onChangeOption={onChangeOption} // Используем onChangeOption
+                            value={value}
+                            onChangeOption={onChangeOption}
                         />
                     </div>
                 </div>
             </div>
         </div>
-    );
-};
-
+    )
+}
 
 export default HW7
