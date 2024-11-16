@@ -2,7 +2,7 @@
   "name": "pre-homeworks",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://IamXacer.github.io/Ignat",
+  "homepage": "https://iamxacer.github.io/Ignat/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
